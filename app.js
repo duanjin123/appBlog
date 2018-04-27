@@ -1,7 +1,6 @@
 // app.js
 
 const config = require('config');
-const diaries = require('demo/diaries');
 
 App({
 

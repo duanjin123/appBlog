@@ -6,17 +6,14 @@ const config = require("../../config");
 var app = getApp();
 
 Page({
-
   data: {
-    // 日记列表
-    // TODO 从server端拉取
-    diaries: null,
-
+    // 博文列表
+    posts: null,
     // 是否显示loading
-    showLoading: false,
+    showLoading: true,
 
     // loading提示语
-    loadingMessage: '',
+    loadingMessage: '正在拼命加载中...',
     imgUrls: [
       'https://duanjin-wordpress.oss-cn-hangzhou.aliyuncs.com/2018/02/31f89c106e70ba7a1f2067abf96f28ea89407a.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
@@ -31,25 +28,34 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad() {
-    this.getDiaries();
+    this.getBlogList()
   },
 
   /**
-   * 获取日记列表
-   * 目前为本地缓存数据 + 本地假数据
+   * 获取文章列表
    * TODO 从服务端拉取
    */
-  getDiaries() {
-    var that = this;
-    app.getDiaryList(list => {
-      that.setData({diaries: list});
+  getBlogList() {
+    var self = this
+    wx.request({
+      url: config.api.baseUrl, // API接口域名，必须在开放平台中设置
+      data: {
+        json: 1
+      },
+      header: {
+          'content-type': 'application/json' // 默认值
+      },
+      success: function(res) { // 请求成功的回调
+        if (res.data.status === 'ok') {
+          let list = res.data.posts
+          list.forEach(element => {
+            element.excerpt = element.excerpt.slice(3, 60) + '...'
+          })
+          self.setData({
+            posts: list
+          })
+        }
+      }
     })
-  },
-
-  // 查看详情
-  showDetail(event) {
-    wx.navigateTo({
-      url: '../entry/entry?id=' + event.currentTarget.id,
-    });
   }
 })
