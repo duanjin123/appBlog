@@ -11,7 +11,7 @@
 <view class="posts-container" wx:for="{{ posts }}" wx:for-item="item" wx:key="item.id">
   <view class="flex-wrp">
     <view class="flex-item-image">
-      <image src="{{item.attachments[2].url}}" class="thumbnail_images"></image>
+      <image src="{{item.thumbnail}}" class="thumbnail_images"></image>
     </view>
     <view class="flex-item-content">
       <view class="title">{{ item.title }}</view>

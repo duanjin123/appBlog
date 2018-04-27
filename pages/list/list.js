@@ -50,6 +50,11 @@ Page({
           let list = res.data.posts
           list.forEach(element => {
             element.excerpt = element.excerpt.slice(3, 60) + '...'
+            if (element.attachments.length >= 3) {
+              element.thumbnail = element.attachments[2].url
+            } else {
+              element.thumbnail = element.attachments[0].url
+            }
           })
           self.setData({
             posts: list
