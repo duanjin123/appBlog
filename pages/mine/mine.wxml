@@ -42,10 +42,12 @@
       <image class="avatar" mode="aspectFit" src="{{userInfo.avatar}}"></image>
       <view class="description">
         <view class="item">
-          <view style="margin-right:5px">{{userInfo.nickname}}</view>
-          <view>{{userInfo.sex}}</view>
+          <view style="margin-right:5px;color: #39b5de;font-weight:bold">{{userInfo.nickname}}</view>
         </view>
-        <view class="item">{{userInfo.meta}}</view>
+        <view class="item">
+          <image class="icon" style="width:10px;height:10px" src="../../images/icons/strategyHl.png"></image>
+          <view style="margin-left:5px;font-size:10px;color:#39b5de">{{userInfo.city}}</view>
+        </view>
       </view>
       <image class="add" mode="aspectFill" src="../../images/icons/add.png" bindtap="touchAdd"></image>
     </view>

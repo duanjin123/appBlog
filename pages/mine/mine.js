@@ -28,12 +28,7 @@ var tabs = [
         "extraStyle": "border:none;",
     },
 ]
-var userInfo = {
-    avatar: "https://pic4.zhimg.com/e515adf3b_xl.jpg",
-    nickname: "小闹钟",
-    sex: "♂",  // 0, male; 1, female
-    meta: '1篇日记',
-}
+var userInfo = {}
 
 
 Page({
@@ -56,7 +51,7 @@ Page({
         diaryTitle: "",
 
         // TODO 用户信息
-        userInfo: userInfo,
+        userInfo: {},
     },
 
     // 隐藏模态框
@@ -72,6 +67,23 @@ Page({
     onShow: function() {
         this.hideModal();
         this.clearTitle();
+        this.getUserInfo();
+    },
+
+    getUserInfo() {
+        var self = this
+        wx.getUserInfo({
+          success: function(res) {
+            var userInfo = {
+                "avatar": res.userInfo.avatarUrl,
+                "nickname": res.userInfo.nickName,
+                "city": res.userInfo.city
+            }
+            self.setData({
+                userInfo: userInfo
+            })
+          }
+        })
     },
 
     // 点击tab项事件

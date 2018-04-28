@@ -27,7 +27,8 @@
         "pagePath": "pages/mine/mine",
         "iconPath": "images/icons/mine.png",
         "selectedIconPath": "images/icons/mineHL.png",
-        "text": "个人空间"
+        "text": "个人空间",
+        "open-type": "getUserInfo"
       }
     ]
   },
