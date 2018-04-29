@@ -39,17 +39,18 @@
 
   <view class="header">
     <view class="profile">
-      <image class="avatar" mode="aspectFit" src="{{userInfo.avatar}}"></image>
+      <open-data type="userAvatarUrl" class="avatar" mode="aspectFit"></open-data>
       <view class="description">
         <view class="item">
-          <view style="margin-right:5px;color: #39b5de;font-weight:bold">{{userInfo.nickname}}</view>
+          <open-data type="userNickName" style="margin-right:5px;color: #39b5de;font-weight:bold"></open-data>
         </view>
         <view class="item">
-          <image class="icon" style="width:10px;height:10px" src="../../images/icons/strategyHl.png"></image>
-          <view style="margin-left:5px;font-size:10px;color:#39b5de">{{userInfo.city}}</view>
+          <!-- <image class="icon" style="width:10px;height:10px" src="../../images/icons/strategyHl.png"></image> -->
+          <open-data type="userProvince" style="font-size:10px;color:#39b5de"></open-data>
+          <open-data type="userCity" style="margin-left:5px;font-size:10px;color:#39b5de"></open-data>
         </view>
       </view>
-      <image class="add" mode="aspectFill" src="../../images/icons/add.png" bindtap="touchAdd"></image>
+      <image class="add" mode="aspectFill" src="../../images/icons/user_privatemsg.png" bindtap="touchAdd"></image>
     </view>
 
     <view class="tablist">
@@ -61,6 +62,8 @@
       </view>
     </view>
   </view>
-
-    <template is="{{currentTab}}"></template>
+<!-- 
+    <template is="{{currentTab}}">
+      <image src="background-image:url(https://duanjin-wordpress.oss-cn-hangzhou.aliyuncs.com/2018/02/mmqrcode1518159801994-1.jpg);"></image>
+    </template> -->
 </view>

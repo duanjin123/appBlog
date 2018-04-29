@@ -6,7 +6,7 @@ var tabs = [
     {
         "icon": iconPath + "mark.png",
         "iconActive": iconPath + "markHL.png",
-        "title": "日记",
+        "title": "足迹",
         "extraStyle": "",
     },
     {
@@ -67,23 +67,6 @@ Page({
     onShow: function() {
         this.hideModal();
         this.clearTitle();
-        this.getUserInfo();
-    },
-
-    getUserInfo() {
-        var self = this
-        wx.getUserInfo({
-          success: function(res) {
-            var userInfo = {
-                "avatar": res.userInfo.avatarUrl,
-                "nickname": res.userInfo.nickName,
-                "city": res.userInfo.city
-            }
-            self.setData({
-                userInfo: userInfo
-            })
-          }
-        })
     },
 
     // 点击tab项事件

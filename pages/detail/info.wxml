@@ -1,0 +1,17 @@
+<!--pages/detail/info.wxml-->
+<import src="../../wxParse/wxParse.wxml"/>
+<!-- 页头，文章信息，包括作者、发表日期、阅读次数  -->
+<view class="flex-wrap">
+  <view class="flex-item-image">
+    <image src="https://duanjin.top/wp-content/uploads/ultimatemember/1/profile_photo-80.jpeg?1525039673" class="avatar"></image>
+  </view>
+  <view class="flex-item-author">
+    <text>{{ info.author.nickname }}</text>
+    <text>{{ info.modified }}</text>
+    <text>{{ info.categories[0].slug }}</text>
+  </view>
+</view>
+<view class='title'>{{ info.title }}</view>
+<view style='margin-top: 30px;'>
+  <view class='content'><template is="wxParse" data="{{wxParseData:content.nodes}}"/></view>
+</view>

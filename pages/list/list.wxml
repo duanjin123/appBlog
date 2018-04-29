@@ -14,7 +14,7 @@
       <image src="{{item.thumbnail}}" class="thumbnail_images"></image>
     </view>
     <view class="flex-item-content">
-      <view class="title">{{ item.title }}</view>
+      <navigator class="title" url="../detail/info?id={{ item.id }}" >{{ item.title }}</navigator> 
       <view class="abstract">{{ item.excerpt }}</view>
       <view class="expret">由{{ item.author.nickname }}于{{ item.date }}发表于https://duanjin.top</view>
     </view>

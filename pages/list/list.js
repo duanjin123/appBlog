@@ -15,7 +15,7 @@ Page({
     // loading提示语
     loadingMessage: '正在拼命加载中...',
     imgUrls: [
-      'https://duanjin-wordpress.oss-cn-hangzhou.aliyuncs.com/2018/02/31f89c106e70ba7a1f2067abf96f28ea89407a.jpg',
+    'https://duanjin-wordpress.oss-cn-hangzhou.aliyuncs.com/2018/04/th.jpeg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
       'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
     ],
@@ -63,4 +63,6 @@ Page({
       }
     })
   }
+
+
 })

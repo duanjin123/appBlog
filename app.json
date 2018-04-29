@@ -1,10 +1,11 @@
 {
-  "pages":[
+  "pages": [
     "pages/list/list",
     "pages/mine/mine",
-    "pages/entry/entry"
+    "pages/entry/entry",
+    "pages/detail/info"
   ],
-  "window":{
+  "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#39b5de",
     "navigationBarTitleText": "Lincoo's Blog",
@@ -16,7 +17,7 @@
     "selectedColor": "#39b5de",
     "backgroundColor": "#ffffff",
     "borderStyle": "black",
-    "list":[
+    "list": [
       {
         "pagePath": "pages/list/list",
         "iconPath": "images/icons/mark.png",

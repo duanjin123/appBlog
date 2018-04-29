@@ -1,0 +1,36 @@
+/* pages/detail/info.wxss */
+@import "/wxParse/wxParse.wxss";
+.flex-wrap {
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  margin: 10px 10px;
+}
+
+.flex-item-author {
+  line-height: 30px;
+  margin-left: 10px;
+}
+
+text {
+  margin-left: 10px
+}
+
+.avatar {
+  width: 25px; 
+  height:25px;
+  border-radius:100%
+}
+
+.title {
+  text-align: center;
+  font-size: 20px;
+  line-height: 100%;
+}
+
+.content {
+  margin-top: 30px;
+  width: 90%;
+  margin: 0 auto;
+  line-height: 30px
+}
